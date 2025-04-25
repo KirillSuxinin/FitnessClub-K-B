@@ -1,0 +1,304 @@
+{
+    "Rus": [
+        {
+            "NameTable": "*",
+            "HeaderTable": "*КОСТЫЛЬ ПЕРЕВОДА ДЛЯ ЗАПРОСОВ ПОДСТАВЛЕНИЙ",
+            "Property": [
+                {
+                    "NameProperty": "Name1",
+                    "HeaderProperty": "Наименование"
+                },
+                {
+                    "NameProperty": "EQUID",
+                    "HeaderProperty": "Оборудование"
+                },
+                {
+                    "NameProperty": "EQUINAME",
+                    "HeaderProperty": "Наим. Оборудования"
+                }
+            ]
+        },
+        {
+            "NameTable": "Trainers",
+            "HeaderTable": "Трейнеры",
+            "Property": [
+                {
+                    "NameProperty": "TrainerID",
+                    "HeaderProperty": "Код тренера"
+                },
+                {
+                    "NameProperty": "FirstName",
+                    "HeaderProperty": "Имя"
+                },
+                {
+                    "NameProperty": "LastName",
+                    "HeaderProperty": "Фамилия"
+                },
+                {
+                    "NameProperty": "Specialization",
+                    "HeaderProperty": "Специализация"
+                },
+                {
+                    "NameProperty": "Phone",
+                    "HeaderProperty": "Номер телефона"
+                },
+                {
+                    "NameProperty": "Email",
+                    "HeaderProperty": "Эл. почта"
+                }
+            ]
+        },
+        {
+            "NameTable": "ClassEquipment",
+            "HeaderTable": "Оборудование для занятий",
+            "Property": [
+                {
+                    "NameProperty": "ClassEquipmentID",
+                    "HeaderProperty": "Код"
+                },
+                {
+                    "NameProperty": "ClassID",
+                    "HeaderProperty": "Занятие"
+                },
+                {
+                    "NameProperty": "EquipmentID",
+                    "HeaderProperty": "Оборудование"
+                }
+            ]
+        },
+        {
+            "NameTable": "Classes",
+            "HeaderTable": "Занятия",
+            "Property": [
+                {
+                    "NameProperty": "TrainerID",
+                    "HeaderProperty": "Тренер занятия"
+                },
+                {
+                    "NameProperty": "ClassID",
+                    "HeaderProperty": "Код занятия"
+                },
+                {
+                    "NameProperty": "Name",
+                    "HeaderProperty": "Наименование"
+                },
+                {
+                    "NameProperty": "Description",
+                    "HeaderProperty": "Описание"
+                },
+                {
+                    "NameProperty": "MaxCapacity",
+                    "HeaderProperty": "Макс. участников"
+                },
+                {
+                    "NameProperty": "StartTime",
+                    "HeaderProperty": "Начало"
+                },
+                {
+                    "NameProperty": "EndTime",
+                    "HeaderProperty": "Окончание"
+                },
+                {
+                    "NameProperty": "DayOfWeek",
+                    "HeaderProperty": "День недели"
+                }
+            ]
+        },
+        {
+            "NameTable": "Equipment",
+            "HeaderTable": "Оборудования",
+            "Property": [
+                {
+                    "NameProperty": "EquipmentID",
+                    "HeaderProperty": "Код"
+                },
+                {
+                    "NameProperty": "Name",
+                    "HeaderProperty": "Наименование"
+                },
+                {
+                    "NameProperty": "Type",
+                    "HeaderProperty": "Тип"
+                }
+            ]
+        },
+        {
+            "NameTable": "Clients",
+            "HeaderTable": "Клиенты",
+            "Property": [
+                {
+                    "NameProperty": "BirthDate",
+                    "HeaderProperty": "Дата рождения"
+                },
+                {
+                    "NameProperty": "ClientID",
+                    "HeaderProperty": "Код"
+                },
+                {
+                    "NameProperty": "FirstName",
+                    "HeaderProperty": "Имя"
+                },
+                {
+                    "NameProperty": "LastName",
+                    "HeaderProperty": "Фамилия"
+                },
+                {
+                    "NameProperty": "Phone",
+                    "HeaderProperty": "Номер тел."
+                },
+                {
+                    "NameProperty": "Email",
+                    "HeaderProperty": "Эл.Почта"
+                },
+                {
+                    "NameProperty": "Address",
+                    "HeaderProperty": "Адрес"
+                }
+            ]
+        },
+        {
+            "NameTable": "Memberships",
+            "HeaderTable": "Члены абонемента",
+            "Property": [
+                {
+                    "NameProperty": "StartDate",
+                    "HeaderProperty": "Начало аб."
+                },
+                {
+                    "NameProperty": "EndDate",
+                    "HeaderProperty": "Окончание аб."
+                },
+                {
+                    "NameProperty": "MembershipID",
+                    "HeaderProperty": "Код"
+                },
+                {
+                    "NameProperty": "ClientID",
+                    "HeaderProperty": "Код клиента"
+                },
+                {
+                    "NameProperty": "MembershipTypeID",
+                    "HeaderProperty": "Код абонемента"
+                }
+            ]
+        },
+        {
+            "NameTable": "MembershipTypes",
+            "HeaderTable": "Тип абонемента",
+            "Property": [
+                {
+                    "NameProperty": "MembershipTypeID",
+                    "HeaderProperty": "Код"
+                },
+                {
+                    "NameProperty": "Name",
+                    "HeaderProperty": "Наименование"
+                },
+                {
+                    "NameProperty": "Description",
+                    "HeaderProperty": "Описание"
+                },
+                {
+                    "NameProperty": "Price",
+                    "HeaderProperty": "Стоимость"
+                },
+                {
+                    "NameProperty": "DurationMonths",
+                    "HeaderProperty": "Период (мес.)"
+                }
+            ]
+        },
+        {
+            "NameTable": "ClientClassRegistrations",
+            "HeaderTable": "Клиент регистрация",
+            "Property": [
+                {
+                    "NameProperty": "registrationID",
+                    "HeaderProperty": "Код регистрации"
+                },
+                {
+                    "NameProperty": "clientID",
+                    "HeaderProperty": "Код клиента"
+                },
+                {
+                    "NameProperty": "classScheduleID",
+                    "HeaderProperty": "Класс записи"
+                },
+                {
+                    "NameProperty": "registeredAt",
+                    "HeaderProperty": "Дата регистрации"
+                }
+            ]
+        },
+        {
+            "NameTable": "Users",
+            "HeaderTable": "Пользователи",
+            "Property": [
+                {
+                    "NameProperty": "ID",
+                    "HeaderProperty": "Код"
+                },
+                {
+                    "NameProperty": "iD_User",
+                    "HeaderProperty": "Код пользоват."
+                },
+                {
+                    "NameProperty": "login",
+                    "HeaderProperty": "Логин"
+                },
+                {
+                    "NameProperty": "password",
+                    "HeaderProperty": "Пароль"
+                },
+                {
+                    "NameProperty": "role",
+                    "HeaderProperty": "Роль/Права"
+                }
+            ]
+        },
+        {
+            "NameTable": "Payments",
+            "HeaderTable": "Платежи",
+            "Property": [
+                {
+                    "NameProperty": "paymentID",
+                    "HeaderProperty": "Код платежа"
+                },
+                {
+                    "NameProperty": "membershipID",
+                    "HeaderProperty": "Код зап. абонемента"
+                },
+                {
+                    "NameProperty": "paymentDate",
+                    "HeaderProperty": "Дата платежа"
+                },
+                {
+                    "NameProperty": "amount",
+                    "HeaderProperty": "Общая стоимость"
+                },
+                {
+                    "NameProperty": "paymentMethod",
+                    "HeaderProperty": "Оплата"
+                }
+            ]
+        },
+        {
+            "NameTable": "ClassSchedules",
+            "HeaderTable": "Занятия",
+            "Property": [
+                {
+                    "NameProperty": "classScheduleID",
+                    "HeaderProperty": "Код занятия"
+                },
+                {
+                    "NameProperty": "classID",
+                    "HeaderProperty": "Занятие"
+                },
+                {
+                    "NameProperty": "scheduledDate",
+                    "HeaderProperty": "Дата занятия"
+                }
+            ]
+        }
+    ]
+}

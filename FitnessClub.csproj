@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EEB07BFF-BDD2-499F-9715-18643214D0B4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>FitnessClub</RootNamespace>
+    <AssemblyName>FitnessClub</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon_standart_wblue_PbE_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.5.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.0\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Formats.Asn1, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Formats.Asn1.8.0.1\lib\net462\System.Formats.Asn1.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.0\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.0\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.0\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.0\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthMainForm.Designer.cs">
+      <DependentUpon>AuthMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dynamic_style.cs" />
+    <Compile Include="FitnessClubDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FitnessClubDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GetRegisterCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetRegisterCodeForm.Designer.cs">
+      <DependentUpon>GetRegisterCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JSON\Translater.cs" />
+    <Compile Include="Lenta\btnUsers_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lenta\btnUsers_Form.Designer.cs">
+      <DependentUpon>btnUsers_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lenta\ClassEquipment_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lenta\ClassEquipment_Form.Designer.cs">
+      <DependentUpon>ClassEquipment_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lenta\Classes_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lenta\Classes_Form.Designer.cs">
+      <DependentUpon>Classes_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lenta\ClassSchedules_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lenta\ClassSchedules_Form.Designer.cs">
+      <DependentUpon>ClassSchedules_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lenta\Class_Trainers_Equipment_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lenta\Class_Trainers_Equipment_Form.Designer.cs">
+      <DependentUpon>Class_Trainers_Equipment_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lenta\ClientClassRegistrations_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lenta\ClientClassRegistrations_Form.Designer.cs">
+      <DependentUpon>ClientClassRegistrations_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lenta\Clients_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lenta\Clients_Form.Designer.cs">
+      <DependentUpon>Clients_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lenta\Equipment_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lenta\Equipment_Form.Designer.cs">
+      <DependentUpon>Equipment_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lenta\Images_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lenta\Images_Form.Designer.cs">
+      <DependentUpon>Images_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lenta\MembershipTypes_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lenta\MembershipTypes_Form.Designer.cs">
+      <DependentUpon>MembershipTypes_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lenta\Membershis_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lenta\Membershis_Form.Designer.cs">
+      <DependentUpon>Membershis_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lenta\Payments_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lenta\Payments_Form.Designer.cs">
+      <DependentUpon>Payments_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lenta\Trainers_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lenta\Trainers_Form.Designer.cs">
+      <DependentUpon>Trainers_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainHandlerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainHandlerForm.Designer.cs">
+      <DependentUpon>MainHandlerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainRegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainRegisterForm.Designer.cs">
+      <DependentUpon>MainRegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other\ChangeStructureOutputTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other\ChangeStructureOutputTableForm.Designer.cs">
+      <DependentUpon>ChangeStructureOutputTableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other\ChangeTable_TEST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other\ChangeTable_TEST.Designer.cs">
+      <DependentUpon>ChangeTable_TEST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other\MeAccount_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other\MeAccount_Form.Designer.cs">
+      <DependentUpon>MeAccount_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other\MeClasses_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other\MeClasses_Form.Designer.cs">
+      <DependentUpon>MeClasses_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tables\Table_Common_Handler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\Table_Common_Handler.Designer.cs">
+      <DependentUpon>Table_Common_Handler.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AuthMainForm.resx">
+      <DependentUpon>AuthMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetRegisterCodeForm.resx">
+      <DependentUpon>GetRegisterCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenta\btnUsers_Form.resx">
+      <DependentUpon>btnUsers_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenta\ClassEquipment_Form.resx">
+      <DependentUpon>ClassEquipment_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenta\Classes_Form.resx">
+      <DependentUpon>Classes_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenta\ClassSchedules_Form.resx">
+      <DependentUpon>ClassSchedules_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenta\Class_Trainers_Equipment_Form.resx">
+      <DependentUpon>Class_Trainers_Equipment_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenta\ClientClassRegistrations_Form.resx">
+      <DependentUpon>ClientClassRegistrations_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenta\Clients_Form.resx">
+      <DependentUpon>Clients_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenta\Equipment_Form.resx">
+      <DependentUpon>Equipment_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenta\Images_Form.resx">
+      <DependentUpon>Images_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenta\MembershipTypes_Form.resx">
+      <DependentUpon>MembershipTypes_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenta\Membershis_Form.resx">
+      <DependentUpon>Membershis_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenta\Payments_Form.resx">
+      <DependentUpon>Payments_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenta\Trainers_Form.resx">
+      <DependentUpon>Trainers_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainHandlerForm.resx">
+      <DependentUpon>MainHandlerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainRegisterForm.resx">
+      <DependentUpon>MainRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other\ChangeStructureOutputTableForm.resx">
+      <DependentUpon>ChangeStructureOutputTableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other\ChangeTable_TEST.resx">
+      <DependentUpon>ChangeTable_TEST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other\MeAccount_Form.resx">
+      <DependentUpon>MeAccount_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other\MeClasses_Form.resx">
+      <DependentUpon>MeClasses_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Tables\Table_Common_Handler.resx">
+      <DependentUpon>Table_Common_Handler.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="FitnessClubDataSet.xsc">
+      <DependentUpon>FitnessClubDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FitnessClubDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FitnessClubDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FitnessClubDataSet.xss">
+      <DependentUpon>FitnessClubDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon_standart_black_0iL_icon.ico" />
+    <Content Include="icon_standart_wblue_PbE_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChartGrid\ChartGrid.csproj">
+      <Project>{5d6167b8-5999-4ee4-a422-978a552220ef}</Project>
+      <Name>ChartGrid</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
