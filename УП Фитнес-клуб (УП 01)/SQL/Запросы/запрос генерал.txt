@@ -1,0 +1,110 @@
+Привет!
+Смотри есть База данных на Microsoft MySQL Server
+
+Твоя Задача написать 
+по 3 запроса на выборку (1 обычный, и смешанные с конструкцией JOIN ON, WHERE, ORDER BY и т.д.)
+И по 1 запросу на удаление,изменение,добавление,вычисление.
+
+Структура таблиц следующая:
+
+use FitnessClub;
+CREATE TABLE Images(
+  ImageID INT PRIMARY KEY NOT NULL,
+  ImageBase64 VARCHAR(MAX) NOT NULL
+);
+
+--1. Clients: Эта таблица хранит информацию о клиентах фитнес-клуба.
+CREATE TABLE Clients (
+  ClientID INT PRIMARY KEY,
+  FirstName VARCHAR(MAX) NOT NULL,
+  LastName VARCHAR(MAX) NOT NULL,
+  BirthDate DATE NULL,
+  Phone VARCHAR(MAX) NULL,
+  Email VARCHAR(MAX) NULL,
+  [Address] VARCHAR(MAX) NULL,
+  ImageID INT NOT NULL,
+  FOREIGN KEY (ImageID) REFERENCES Images(ImageID)
+);
+--2. MembershipTypes: Эта таблица описывает различные типы абонементов, предлагаемых фитнес-клубом.
+CREATE TABLE MembershipTypes (
+  MembershipTypeID INT PRIMARY KEY,
+  Name VARCHAR(MAX) NOT NULL,
+  [Description] VARCHAR(MAX) NULL,
+  Price FLOAT NOT NULL,
+  DurationMonths INT NOT NULL
+);
+--3. Memberships: Эта таблица связывает клиентов с конкретными абонементами.
+CREATE TABLE Memberships (
+  MembershipID INT PRIMARY KEY,
+  ClientID INT NOT NULL,
+  MembershipTypeID INT NOT NULL,
+  StartDate DATE NOT NULL,
+  EndDate DATE NULL,
+  FOREIGN KEY (ClientID) REFERENCES Clients(ClientID),
+  FOREIGN KEY (MembershipTypeID) REFERENCES MembershipTypes (MembershipTypeID),
+);
+--4. Trainers: Эта таблица содержит информацию о тренерах, работающих в фитнес-клубе.
+CREATE TABLE Trainers (
+  TrainerID INT PRIMARY KEY,
+  FirstName VARCHAR(MAX) NOT NULL,
+  LastName VARCHAR(MAX) NOT NULL,
+  Specialization VARCHAR(MAX) NULL,
+  Phone VARCHAR(MAX) NULL,
+  Email VARCHAR(MAX) NULL,
+  ImageID INT NOT NULL,
+  FOREIGN KEY (ImageID) REFERENCES Images(ImageID)
+);
+--5. Classes: Эта таблица описывает групповые занятия, предлагаемые фитнес-клубом.
+CREATE TABLE Classes (
+  ClassID INT PRIMARY KEY,
+  [Name] VARCHAR(MAX) NOT NULL,
+  [Description] VARCHAR(MAX) NULL,
+  TrainerID INT NOT NULL,
+  MaxCapacity INT NOT NULL,
+  StartTime TIME NOT NULL,
+  EndTime TIME NOT NULL,
+  [DayOfWeek] VARCHAR(MAX) NOT NULL,
+
+  FOREIGN KEY (TrainerID) REFERENCES Trainers(TrainerID)
+);
+
+--6. ClassSchedules: Эта таблица хранит расписание занятий.
+CREATE TABLE ClassSchedules (
+  ClassScheduleID INT PRIMARY KEY,
+  ClassID INT NOT NULL,
+  ScheduledDate DATE NOT NULL,  --More descriptive name
+  FOREIGN KEY (ClassID) REFERENCES Classes(ClassID)
+);
+--7. ClientClassRegistrations: Эта таблица отслеживает регистрацию клиентов на групповые занятия.
+CREATE TABLE ClientClassRegistrations (
+  RegistrationID INT PRIMARY KEY,
+  ClientID INT NOT NULL,
+  ClassScheduleID INT NOT NULL,
+  RegisteredAt DATETIME,
+   FOREIGN KEY (ClientID) REFERENCES Clients(ClientID),
+   FOREIGN KEY (ClassScheduleID) REFERENCES ClassSchedules(ClassScheduleID)
+);
+--8. Payments: Эта таблица хранит информацию о платежах, совершенных клиентами.
+CREATE TABLE Payments (
+  PaymentID INT PRIMARY KEY,
+  MembershipID INT NOT NULL,
+  PaymentDate DATE NOT NULL,
+  Amount FLOAT NOT NULL,
+  PaymentMethod VARCHAR(MAX) NOT NULL, -- Use VARCHAR instead of ENUM
+  FOREIGN KEY (MembershipID) REFERENCES Memberships(MembershipID)
+);
+--9. Equipment: Эта таблица перечисляет оборудование, имеющееся в фитнес-клубе.
+CREATE TABLE Equipment (
+  EquipmentID INT PRIMARY KEY,
+  [Name] VARCHAR(MAX) NOT NULL,
+  [Type] VARCHAR(MAX) NULL
+);
+--10. ClassEquipment: Эта таблица устанавливает связь между занятиями и используемым для них оборудованием (связывающая таблица).
+CREATE TABLE ClassEquipment (
+    ClassEquipmentID INT PRIMARY KEY,
+    ClassID INT NOT NULL,
+    EquipmentID INT NOT NULL,
+    FOREIGN KEY (ClassID) REFERENCES Classes(ClassID) ON DELETE CASCADE,
+    FOREIGN KEY (EquipmentID) REFERENCES Equipment(EquipmentID) ON DELETE CASCADE
+);
+
